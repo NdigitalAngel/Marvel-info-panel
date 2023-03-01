@@ -11,9 +11,9 @@ const AppHeader = () => {
             </h1>
             <nav className="app__menu">
                 <ul>
-                    <li><NavLink end activeStyle={{'color': '#9f0013'}} to="/">Characters</NavLink></li>
+                    <li><NavLink end to="/">Characters</NavLink></li>
                     /
-                    <li><NavLink end activeStyle={{'color': '#9f0013'}} to="/comics">Comics</NavLink></li>
+                    <li><NavLink end to="/comics">Comics</NavLink></li>
                 </ul>
             </nav>
         </header>

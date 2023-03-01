@@ -56,7 +56,7 @@ const CharList = (props) => {
                     className="char__item"
                     tabIndex={0}
                     ref={el => itemRefs.current[i] = el}
-                    key={item.id}
+                    key={i}
                     onClick={() => {
                         props.onCharSelected(item.id);
                         focusOnItem(i);

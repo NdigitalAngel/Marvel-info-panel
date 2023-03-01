@@ -3,6 +3,7 @@ import './comicsList.scss';
 import Spinner from "../spinner/Spinner";
 import ErrorMessage from "../errorMessage/ErrorMessage";
 import MarvelService from '../../services/MarvelService';
+import { Link } from 'react-router-dom';
 
 const ComicsList = () => {
     const [comicsList, setComicsList] = useState([])
@@ -26,10 +27,10 @@ const ComicsList = () => {
     }
 
     function renderItems(arr) {
-        const items = arr.map(item => {
+        const items = arr.map((item, i) => {
             return (
-                <li className="comics__item" key={item.id}>
-                    <a href="#">
+                <li className="comics__item" key={i}>
+                    <Link to={`/comics/${item.id}`}>
                         <img
                             src={item.thumbnail}
                             alt={item.title}
@@ -39,7 +40,7 @@ const ComicsList = () => {
                             {item.title}
                         </div>
                         <div className="comics__item-price">{item.price}</div>
-                    </a>
+                    </Link>
                 </li>
             );
         })
